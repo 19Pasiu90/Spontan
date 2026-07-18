@@ -11,88 +11,167 @@
 <style>
 
 :root{
---bg:#0f172a;
---card:#1e293b;
---accent:#38bdf8;
---text:#f8fafc;
---muted:#cbd5e1;
+    --bg:#020617;
+    --surface:#0f172a;
+    --card:#1e293b;
+    --card2:#24364d;
+    --accent:#38bdf8;
+    --accent2:#0ea5e9;
+    --text:#f8fafc;
+    --muted:#cbd5e1;
+    --border:rgba(255,255,255,.08);
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(180deg,#020617,#0f172a);
-color:var(--text);
-line-height:1.8;
-padding:30px;
+    font-family:Segoe UI,Arial,Helvetica,sans-serif;
+    background:
+    radial-gradient(circle at top,#1d4ed820 0%,transparent 45%),
+    linear-gradient(180deg,#020617,#07111f,#0f172a);
+    color:var(--text);
+    line-height:1.8;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-}
-
-header{
-text-align:center;
-margin-bottom:40px;
+.hero{
+    padding:70px 25px 60px;
+    text-align:center;
 }
 
 .logo{
-font-size:42px;
-font-weight:bold;
-color:var(--accent);
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:22px;
+    background:linear-gradient(135deg,var(--accent),#2563eb);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    font-weight:bold;
+    box-shadow:0 20px 45px rgba(56,189,248,.35);
+}
+
+h1{
+    margin-top:25px;
+    font-size:42px;
 }
 
 .subtitle{
-margin-top:8px;
-color:var(--muted);
+    margin-top:12px;
+    color:var(--muted);
+    font-size:18px;
+}
+
+.badges{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.badge{
+    padding:10px 18px;
+    border-radius:999px;
+    background:#132338;
+    border:1px solid var(--border);
+    color:#cfe9ff;
+    font-size:14px;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:0 20px 50px;
 }
 
 .card{
-background:rgba(30,41,59,.9);
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:30px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.35);
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:32px;
+    margin-bottom:24px;
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(56,189,248,.4);
 }
 
 h2{
-color:var(--accent);
-margin-bottom:18px;
+    color:var(--accent);
+    margin-bottom:20px;
+    font-size:24px;
 }
 
 p{
-margin-bottom:15px;
+    margin-bottom:14px;
 }
 
 ul{
-padding-left:22px;
+    padding-left:22px;
 }
 
 li{
-margin-bottom:10px;
-}
-
-footer{
-margin-top:40px;
-text-align:center;
-color:#94a3b8;
-font-size:14px;
+    margin-bottom:10px;
 }
 
 a{
-color:#7dd3fc;
-text-decoration:none;
+    color:#7dd3fc;
+    text-decoration:none;
 }
 
 a:hover{
-text-decoration:underline;
+    text-decoration:underline;
+}
+
+.footer{
+    text-align:center;
+    padding:40px 20px 60px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:20px;
+}
+
+.footer strong{
+    color:white;
+}
+
+@media(max-width:700px){
+
+.hero{
+padding:45px 20px;
+}
+
+.logo{
+width:72px;
+height:72px;
+font-size:34px;
+}
+
+h1{
+font-size:32px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+.card{
+padding:24px;
+}
+
 }
 
 </style>
@@ -101,40 +180,41 @@ text-decoration:underline;
 
 <body>
 
-<div class="container">
+<section class="hero">
 
-<header>
+<div class="logo">S</div>
 
-<div class="logo">PachCorp</div>
+<h1>Spontan</h1>
 
 <div class="subtitle">
-Polityka Prywatności aplikacji <strong>Spontan</strong>
+Privacy Policy / Polityka Prywatności
 </div>
 
-</header>
+<div class="badges">
+<div class="badge">📍 Events</div>
+<div class="badge">💬 Chat</div>
+<div class="badge">🔒 Secure</div>
+<div class="badge">⭐ Premium</div>
+</div>
+
+</section>
+
+<div class="container">
 
 <div class="card">
 
 <h2>1. Administrator</h2>
 
 <p>
-
-Administratorem aplikacji Spontan jest
-
+Administratorem aplikacji <strong>Spontan</strong> jest
 <strong>PachCorp</strong>.
-
 </p>
 
 <p>
-
 Kontakt:
-
 <a href="mailto:iloveyouuncleg@gmail.com">
-
 iloveyouuncleg@gmail.com
-
 </a>
-
 </p>
 
 </div>
@@ -144,21 +224,13 @@ iloveyouuncleg@gmail.com
 <h2>2. Jakie dane są przetwarzane</h2>
 
 <ul>
-
 <li>Adres e-mail użytkownika.</li>
-
 <li>Pseudonim użytkownika.</li>
-
 <li>Identyfikator konta Firebase.</li>
-
 <li>Lokalizacja urządzenia wyłącznie podczas korzystania z aplikacji.</li>
-
 <li>Dane dotyczące tworzonych wydarzeń.</li>
-
 <li>Wiadomości wysyłane na czacie wydarzeń.</li>
-
 <li>Informacje o zakupie funkcji Premium realizowane przez Google Play.</li>
-
 </ul>
 
 </div>
@@ -168,19 +240,12 @@ iloveyouuncleg@gmail.com
 <h2>3. W jakim celu dane są wykorzystywane</h2>
 
 <ul>
-
 <li>Logowanie do aplikacji.</li>
-
 <li>Wyświetlanie wydarzeń w pobliżu użytkownika.</li>
-
 <li>Tworzenie i obsługa wydarzeń.</li>
-
 <li>Komunikacja pomiędzy uczestnikami wydarzeń.</li>
-
 <li>Obsługa zakupów Premium.</li>
-
 <li>Zapewnienie bezpieczeństwa działania aplikacji.</li>
-
 </ul>
 
 </div>
@@ -190,11 +255,8 @@ iloveyouuncleg@gmail.com
 <h2>4. Lokalizacja</h2>
 
 <p>
-
 Aplikacja korzysta z lokalizacji wyłącznie podczas aktywnego korzystania z aplikacji.
-
 Nie śledzi lokalizacji użytkownika w tle.
-
 </p>
 
 </div>
@@ -204,11 +266,8 @@ Nie śledzi lokalizacji użytkownika w tle.
 <h2>5. Czat i wydarzenia</h2>
 
 <p>
-
 Wiadomości oraz dane wydarzeń przechowywane są jedynie przez czas niezbędny do działania wydarzenia.
-
 Po zakończeniu wydarzenia lub najpóźniej po 24 godzinach od jego utworzenia dane związane z wydarzeniem są automatycznie usuwane.
-
 </p>
 
 </div>
@@ -217,18 +276,11 @@ Po zakończeniu wydarzenia lub najpóźniej po 24 godzinach od jego utworzenia d
 
 <h2>6. Logowanie</h2>
 
-<p>
-
-Aplikacja umożliwia logowanie przy użyciu:
-
-</p>
+<p>Aplikacja umożliwia logowanie przy użyciu:</p>
 
 <ul>
-
 <li>adresu e-mail i hasła,</li>
-
 <li>konta Google.</li>
-
 </ul>
 
 </div>
@@ -237,22 +289,13 @@ Aplikacja umożliwia logowanie przy użyciu:
 
 <h2>7. Usługi zewnętrzne</h2>
 
-<p>
-
-Aplikacja korzysta z usług:
-
-</p>
+<p>Aplikacja korzysta z usług:</p>
 
 <ul>
-
-<li>Firebase Authentication,</li>
-
-<li>Cloud Firestore,</li>
-
-<li>Google Maps Platform,</li>
-
-<li>Google Play Billing.</li>
-
+<li>Firebase Authentication</li>
+<li>Cloud Firestore</li>
+<li>Google Maps Platform</li>
+<li>Google Play Billing</li>
 </ul>
 
 </div>
@@ -262,9 +305,7 @@ Aplikacja korzysta z usług:
 <h2>8. Bezpieczeństwo</h2>
 
 <p>
-
 Wszystkie dane przesyłane pomiędzy aplikacją a usługami Google są chronione z wykorzystaniem szyfrowanych połączeń HTTPS/TLS.
-
 </p>
 
 </div>
@@ -274,29 +315,22 @@ Wszystkie dane przesyłane pomiędzy aplikacją a usługami Google są chronione
 <h2>9. Kontakt</h2>
 
 <p>
-
 W sprawach dotyczących prywatności można kontaktować się pod adresem:
-
 </p>
 
 <p>
-
 <a href="mailto:iloveyouuncleg@gmail.com">
-
 iloveyouuncleg@gmail.com
-
 </a>
-
 </p>
 
 </div>
 
-<footer>
+</div>
 
-© 2026 PachCorp • Spontan
-
-</footer>
-
+<div class="footer">
+<strong>Spontan</strong><br>
+© 2026 PachCorp
 </div>
 
 </body>
